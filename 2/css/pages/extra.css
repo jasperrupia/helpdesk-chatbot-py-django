@@ -1,0 +1,33 @@
+/*******************
+ This is for responsive dashboard element
+*******************/
+
+@media (max-width: 1023px) {
+  .r-aside{ padding-right:30px; }
+  .right-side-panel{ display:none; } 
+}
+
+@media (max-width: 1170px) {
+  .navbar-header span{ display:none; }
+}
+
+.chat-list{ height:calc(100vh - 300px); overflow-y: scroll; }
+.chat-list .chat-item{width: 100%; list-style:none; margin-top:30px; }
+
+.chat-list .chat-item .chat-content{ width:calc(100% - 100px); display:inline-block; }
+.chat-list .chat-item .chat-content .box{ display:inline-block; padding:10px; margin-bottom:3px; color:#343a40; background:#f8f9fa }
+.chat-list .chat-item .chat-time{ display:block; font-size:10px; color:#4f5467; margin-bottom: 15px; }
+
+.chat-list .chat-item.odd { float:right; }
+.chat-list .chat-item.odd .chat-img{ float:right; width:45px; margin:5px; }
+.chat-list .chat-item.odd .chat-img img{ width:45px; border-radius:40% }
+.chat-list .chat-item.odd .chat-content{ text-align:right; width:calc(100% - 60px) }
+.chat-list .chat-item.odd .chat-content h6{ text-align:right; }
+.chat-list .chat-item.odd .chat-time{ float:right; }
+.chat-list .chat-item.odd .box{ clear:both; color:#fff; background:#27a9e3 }
+
+.chat-list::-webkit-scrollbar { width:5px; }
+.chat-list::-webkit-scrollbar-track { background:#f1f1f1; }
+.chat-list::-webkit-scrollbar-thumb { background:#aaa; }
+.chat-list::-webkit-scrollbar-thumb:hover { background:#666666; }
+.chat-list::-webkit-scrollbar-corner { background:#f1f1f1; }
