@@ -1,6 +1,0 @@
-Django
-nltk
-sklearn
-numpy
-mysqlclient
-pillow
