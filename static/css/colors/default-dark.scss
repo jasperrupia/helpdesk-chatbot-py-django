@@ -1,15 +1,6 @@
 
 @import './variable';
-$themecolor: #398bf7;
-$themecolor-dark: #028ee1;
-$topbar: #fff;
-$sidebar:#242a33;
-$sidebar-text: #687384;
-$sidebar-icons: #424a56;
-$sidebar-dark: #1c2128;
-$sidebar-alt:#1c2128;
-$themecolor-alt: #26c6da;
-$topbar-alt: #398bf7;
+ 
 
 /*******************
 /*Top bar
@@ -153,7 +144,7 @@ a.link {
 
 @media (min-width: 768px) {
     .mini-sidebar .sidebar-nav #sidebarnav>li>ul {
-        background: $sidebar-dark;
+        background: $sidebar-light;
     }
 }
 
@@ -166,7 +157,7 @@ a.link {
 }
 
 .card-no-border .sidebar-footer {
-    background: $sidebar-dark;
+    background: $sidebar-light;
 }
 
 .label-themecolor {
@@ -174,19 +165,19 @@ a.link {
 }
 
 .sidebar-nav>ul>li.active>a {
-    color: $white;
+    color: $themecolor;
     border-color: $themecolor;
     i {
-        color: $white;
+        color: $themecolor;
     }
 }
 
 .sidebar-nav ul li a {
     &.active,
     &:hover {
-        color: $white;
+        color: $info; 
         i {
-            color: $white;
+            color: $info;
         }
     }
 }

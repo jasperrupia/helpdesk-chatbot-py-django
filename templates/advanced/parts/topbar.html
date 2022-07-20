@@ -1,0 +1,66 @@
+{% load static %}
+
+<header class="topbar">
+    <nav class="navbar top-navbar navbar-expand-md navbar-light">
+        <!-- ============================================================== -->
+        <!-- Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-header">
+            <a href="desktop"> <img src="{% static 'assets/headIcon.png' %}" alt="logo" width="50px" /> </a>
+            <span class="dark-logo h3"> MU-BOT </span>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Logo -->
+        <!-- ============================================================== -->
+
+        <div class="navbar-collapse">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav me-auto">
+                <!-- This is  -->
+                <li class="nav-item"> 
+                    <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
+                        href="javascript:void(0)"><i class="fa fa-list"></i></a> 
+                </li>
+            </ul>
+            <!-- ============================================================== -->
+            <!-- User profile and search -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav my-lg-0">
+                <!-- ============================================================== -->
+                <!-- Search -->
+                <!-- ============================================================== -->
+                <!-- <li class="nav-item hidden-xs-down search-box"> 
+                    <a class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <form class="app-search">
+                        <input type="text" class="form-control" placeholder="Search & enter"> 
+                        <a class="srh-btn"> <i class="fa fa-times fa-2x"></i> </a>
+                    </form>
+                </li> -->
+                <!-- ============================================================== -->
+                <!-- Profile -->
+                <!-- ============================================================== -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark pro-pic" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="../media/{{ user.avata }}" class="rounded-circle" width="31"/>
+                        <span class="p-2"> {{ user.username }} </span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end animated shadow-lg p-3" style="width:277px; position:absolute; right:2px; margin-top:2px;" aria-labelledby="navbarDropdown">
+                        <div class="text-center">
+                            <img src="../media/{{ user.avata }}" style='width: 150px; margin:auto;' class='img-circle img-thumbnail'><br>
+                            <span> {{ user.username }} </span><br>
+                            <span> Since: {{ user.date_joined }} </span>
+                        </div>
+                        <div class="py-3"> 
+                            <a class="" href="profile"><i class="fa fa-user" aria-hidden="true"></i> My Profile</a>
+                            <a href="../adminPanel/logout" class="btn btn-sm btn-secondary btn-rounded pull-right"> <i class="fa fa-power-off" aria-hidden="true"></i> Sign Out </a>
+                        </div>
+                    </ul>  
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -108,7 +108,7 @@ a.link:hover, a.link:focus {
 *******************/
 .card-no-border .left-sidebar,
 .card-no-border .sidebar-nav {
-  background: #242a33;
+  background: #dae6e9;
 }
 
 .mini-sidebar .sidebar-nav {
@@ -117,19 +117,19 @@ a.link:hover, a.link:focus {
 
 @media (min-width: 768px) {
   .mini-sidebar .sidebar-nav #sidebarnav > li > ul {
-    background: #1c2128;
+    background: #e5edef;
   }
 }
 .sidebar-nav {
-  background: #242a33;
+  background: #dae6e9;
 }
 
 .user-profile .profile-text a {
-  color: #687384 !important;
+  color: #398bf7 !important;
 }
 
 .card-no-border .sidebar-footer {
-  background: #1c2128;
+  background: #e5edef;
 }
 
 .label-themecolor {
@@ -137,26 +137,26 @@ a.link:hover, a.link:focus {
 }
 
 .sidebar-nav > ul > li.active > a {
-  color: #ffffff;
+  color: #398bf7;
   border-color: #398bf7;
 }
 .sidebar-nav > ul > li.active > a i {
-  color: #ffffff;
+  color: #398bf7;
 }
 
 .sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {
-  color: #ffffff;
+  color: #398bf7;
 }
 .sidebar-nav ul li a.active i, .sidebar-nav ul li a:hover i {
-  color: #ffffff;
+  color: #398bf7;
 }
 
 .sidebar-nav ul li.nav-small-cap {
-  color: #687384;
+  color: #398bf7;
 }
 
 @media (min-width: 768px) {
   .mini-sidebar .sidebar-nav #sidebarnav > li:hover > a {
-    background: #1c2128;
+    background: #e5edef;
   }
 }/*# sourceMappingURL=default-dark.css.map */

@@ -2,6 +2,7 @@
 <html lang="en">
     {% load static %}
 <link rel="stylesheet" href="{% static 'helpdesk/style.css' %}">
+<link rel="stylesheet" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.css' %}">
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +17,7 @@
         <div class="chatbox__support">
             <div class="chatbox__header">
                 <div class="chatbox__image--header">
-                    <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-5--v1.png" alt="image">
+                    <i class="fa fa-user-circle-o fa-4x" aria-hidden="true"></i>
                 </div>
                 <div class="chatbox__content--header">
                     <h4 class="chatbox__heading--header">Chat support</h4>
@@ -32,7 +33,7 @@
             </div>
         </div>
         <div class="chatbox__button">
-            <button><img src="{% static 'helpdesk/images/chatbox-icon.svg' %}" /></button>
+            <button style="color: #398bf7;"> <i class="fa fa-comments fa-3x" aria-hidden="true" style="color: #398bf7;"></i> </button>
         </div>
     </div>
 </div>

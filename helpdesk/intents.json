@@ -11,7 +11,6 @@
         "Good day"
       ],
       "responses": [
-        "Hey :-)",
         "Hello, thanks for visiting",
         "Hi there, what can I do for you?",
         "Hi there, how can I help?"
@@ -23,7 +22,8 @@
       "responses": [
         "See you later, thanks for visiting",
         "Have a nice day",
-        "Bye! Come back again soon."
+        "Bye! Come back again soon.",
+        "Bye"
       ]
     },
     {
@@ -34,51 +34,48 @@
     {
       "tag": "items",
       "patterns": [
-        "Which items do you have?",
-        "What kinds of items are there?",
-        "What do you sell?"
+        "What do you know?",
+        "What kinds of knowledge do you have?",
+        "What do you have?"
       ],
       "responses": [
-        "We sell coffee and tea",
-        "We have coffee and tea"
+        "I know a lot about Mzumbe University",
+        "Ask me about Mzumbe"
       ]
     },
     {
       "tag": "payments",
       "patterns": [
-        "Do you take credit cards?",
-        "Do you accept Mastercard?",
+        "Do payments done by credit cards?",
+        "Do they you accept Mastercard?",
         "Can I pay with Paypal?",
-        "Are you cash only?"
+        "Do Mzumbe paid by cash only?"
       ],
       "responses": [
-        "We accept VISA, Mastercard and Paypal",
-        "We accept most major credit cards, and Paypal"
+        "We provide control number, for payments",
+        "We accept most most payments by control number for each student or applicant"
       ]
     },
     {
-      "tag": "delivery",
+      "tag": "travel",
       "patterns": [
-        "How long does delivery take?",
-        "How long does shipping take?",
-        "When do I get my delivery?"
+        "How long does traveling to Mzumbe take?"
       ],
       "responses": [
-        "Delivery takes 2-4 days",
-        "Shipping takes 2-4 days"
+        "It depends, <a href='https://maps.google.com' target='_blank'> google map </a> will help you",
+        "If I were you, I would ask <a href='https://maps.google.com' target='_blank'> google map </a> for that."
       ]
     },
     {
-      "tag": "funny",
+      "tag": "sites",
       "patterns": [
-        "Tell me a joke!",
-        "Tell me something funny!",
-        "Do you know a joke?"
+        "Mzumbe website",
+        "Mzumbe site"
       ],
       "responses": [
-        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
-        "What did the buffalo say when his son left for college? Bison."
+        "Here you go, <a href='https://mzumbe.ac.tz' target='_blank'>"
       ]
     }
   ]
 }
+

@@ -4,7 +4,7 @@ import random
 import string # to process standard python strings
 
 
-## Corpus
+## Corpus - is the training data needed for the chatbot to learn
 ## Reading in the data
 # We will read in the corpus.txt file and convert the entire corpus into a list of
 # sentences and a list of words for further pre-processing.
@@ -13,9 +13,6 @@ raw=f.read()
 raw=raw.lower()# converts to lowercase
 sent_tokens = nltk.sent_tokenize(raw)# converts to list of sentences
 word_tokens = nltk.word_tokenize(raw)# converts to list of words
-
-
-
 
 
 ## Pre-processing the raw text
@@ -30,9 +27,6 @@ def LemNormalize(text):
     return LemTokens(nltk.word_tokenize(text.lower().translate(remove_punct_dict)))
 
 
-
-
-
 ## Keyword matching
 # Next, we shall define a function for a greeting by the bot i.e if a user’s input is a
 # greeting, the bot shall return a greeting response.
@@ -44,9 +38,6 @@ def greeting(sentence):
             return random.choice(GREETING_RESPONSES)
 
 
-
-
-
 ## Generating Response
 #To generate a response from our bot for input questions, the concept of
 #document similarity will be used.
@@ -54,6 +45,7 @@ def greeting(sentence):
 # words in the corpus.
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+
 
 # We define a function response which searches the user’s utterance for one or
 # more known keywords and returns one of several possible responses. If it doesn’t
@@ -77,14 +69,12 @@ def response(user_response):
         return bot_response
 
 
-
 def get_response(user_response):
     if(user_response!='bye'):
         if(user_response=='thanks' or user_response=='thank you' ):
             return "You are welcome.."
         else:
             if(greeting(user_response)!=None):
-                #print("Bot: "+greeting(user_response))
                 return greeting(user_response)
             else:
                 sent_tokens.append(user_response)
@@ -94,32 +84,4 @@ def get_response(user_response):
                 return response(user_response)
     else:
         return "Bye! take care.."
-
-
-
-
-# # Finally, we will feed the lines that we want our bot to say while starting and
-# # ending a conversation depending upon user’s input.
-# flag=True
-# print("Bot: My name is Robo. I will answer your queries about Chatbots. If you want to exit, type Bye!")
-# while(flag==True):
-#     user_response = input()
-#     user_response=user_response.lower()
-#     if(user_response!='bye'):
-#         if(user_response=='thanks' or user_response=='thank you' ):
-#             flag=False
-#             print("Bot: You are welcome..")
-#         else:
-#             if(greeting(user_response)!=None):
-#                 print("Bot: "+greeting(user_response))
-#             else:
-#                 sent_tokens.append(user_response)
-#                 word_tokens=word_tokens+nltk.word_tokenize(user_response)
-#                 final_words=list(set(word_tokens))
-#                 print("Bot: ",end="")
-#                 print(response(user_response))
-#                 sent_tokens.remove(user_response)
-#     else:
-#         flag=False
-#         print("Bot: Bye! take care..")
 
