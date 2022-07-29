@@ -1,3 +1,5 @@
 from django.test import TestCase
 
-# Create your tests here.
+from . import train
+
+train.print(f'training complete. file saved to {FILE}')

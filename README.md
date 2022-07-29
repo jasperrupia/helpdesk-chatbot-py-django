@@ -10,9 +10,9 @@ virtualenvwrapper-win
 ```
 python -m pip install virtualenvwrapper-win
 
-mkvirtualenv pms
+mkvirtualenv chatbot
 
-workon pms
+workon chatbot
 
 pip install -r requirements.txt
 

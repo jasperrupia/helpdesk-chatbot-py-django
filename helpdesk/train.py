@@ -1,14 +1,15 @@
 import numpy as np
 import json
-
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
 
+
 from nltk_utils import bag_of_words, tokenize, stem
 from model import NeuralNet
 
-with open('intents.json', 'r') as f:
+
+with open('helpdesk/intents.json', 'r') as f:
     intents = json.load(f)
 
 all_words = []
@@ -76,11 +77,13 @@ class ChatDataset(Dataset):
     def __len__(self):
         return self.n_samples
 
+ 
+
 dataset = ChatDataset()
 train_loader = DataLoader(dataset=dataset,
-                          batch_size=batch_size,
-                          shuffle=True,
-                          num_workers=0)
+                        batch_size=batch_size,
+                        shuffle=True,
+                        num_workers=0)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -89,7 +92,6 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 # Loss and optimizer
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
-
 # Train the model
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
@@ -114,15 +116,18 @@ for epoch in range(num_epochs):
 print(f'final loss: {loss.item():.4f}')
 
 data = {
-"model_state": model.state_dict(),
-"input_size": input_size,
-"hidden_size": hidden_size,
-"output_size": output_size,
-"all_words": all_words,
-"tags": tags
+    "model_state": model.state_dict(),
+    "input_size": input_size,
+    "hidden_size": hidden_size,
+    "output_size": output_size,
+    "all_words": all_words,
+    "tags": tags
 }
 
-FILE = "data.pth"
+FILE = "helpdesk/data.pth"
 torch.save(data, FILE)
 
 print(f'training complete. file saved to {FILE}')
+
+
+

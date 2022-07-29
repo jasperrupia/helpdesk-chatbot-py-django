@@ -63,22 +63,22 @@
                     <!-- Column -->
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="card card-hover">
-                            <a href="test" class="box bg-primary text-center waves-effect waves-dark">
+                            <a href="feed_data" class="box bg-primary text-center waves-effect waves-dark">
                                 <h1 class="text-white">
                                     <i class="fa fa-braille"></i>
                                 </h1>
-                                <h6 class="text-white"> To bot </h6>
+                                <h6 class="text-white"> Qns Trainigs </h6>
                             </a>
                         </div>
                     </div>
                     <!-- Column -->
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="card card-hover">
-                            <a href="feed" class="box bg-primary text-center waves-effect waves-dark">
+                            <a href="feed_docs" class="box bg-primary text-center waves-effect waves-dark">
                                 <h1 class="text-white">
-                                    T
+                                    <i class="fa fa-braille"></i>
                                 </h1>
-                                <h6 class="text-white"> Trainigs </h6>
+                                <h6 class="text-white"> Doc Trainings </h6>
                             </a>
                         </div>
                     </div>
@@ -87,14 +87,14 @@
                         <div class="card card-hover">
                             <a href="feedbacks" class="box bg-primary text-center waves-effect waves-dark">
                                 <h1 class="text-white">
-                                    23 <i class="fa fa-commenting"></i>
+                                    {{ feedback_values|length }} <i class="fa fa-commenting"></i>
                                 </h1>
                                 <h6 class="text-white"> User feedbacks </h6>
                             </a>
                         </div>
                     </div>
                     <!-- Column -->
-                    <!-- 
+                    
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="card card-hover">
                             <a href="#user-trand" class="smoothScroll box bg-success text-center">
@@ -104,7 +104,7 @@
                                 <h6 class="text-white"> Reports </h6>
                             </a>
                         </div>
-                    </div> -->
+                    </div>
                     <!-- Column -->
                     <div class="col-sm-6 col-md-4 col-lg-3">
                         <div class="card card-hover">
@@ -168,7 +168,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <h4 class="card-title"><span class="lstick"></span> User visit trand </h4>
+                                    <h4 class="h5"><span class="lstick"></span> User visit trend </h4>
                                 </div>
                                 <div>
                                     <canvas id="myChart"></canvas>
@@ -182,59 +182,28 @@
                     <div class="col-lg-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title"><span class="lstick"></span> Top last user feedbacks</h4>
+                                <h4 class="h5"><span class="lstick"></span> Top last user feedbacks</h4>
                             </div>
                             <div class="comment-widgets scrollable">
 
                                 <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row mt-0 shadow-sm">
+                                {% for instance in feedback_values|slice:'3' %}
+                                <div class="d-flex flex-row comment-row shadow-sm">
                                     <div class="p-2">
                                         <img src="" width="50" class="rounded-circle"/>
                                     </div>
                                     <div class="comment-text w-100">
-                                        <h6 class="font-medium">Jamali Ander</h6>
+                                        <h6 class="h5"> {{ instance.visitor_name }} </h6>
                                         <span class="mb-3 d-block">
-                                            The bot seems to user perfect today.
+                                            {{ instance.message }}
                                         </span>
                                         <div class="comment-footer">
-                                            <span class="text-muted float-end comment-time">May 14, 2021</span>
+                                            <span class="text-muted float-end comment-time"> {{ instance.date }} </span>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row shadow-sm">
-                                    <div class="p-2">
-                                        <img src="../media/users/linu.jpg" width="50" class="rounded-circle"/>
-                                    </div>
-                                    <div class="comment-text active w-100">
-                                        <h6 class="font-medium">Michael Jorden</h6>
-                                        <span class="mb-3 d-block">
-                                            I love the bot interaction with me..
-                                        </span>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-end comment-time">May 10, 2021</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Comment Row -->
-                                <div class="d-flex flex-row comment-row shadow-sm">
-                                    <div class="p-2">
-                                        <img src="../media/users/linu.jpg" width="50" class="rounded-circle"/>
-                                    </div>
-                                    <div class="comment-text w-100">
-                                        <h6 class="font-medium">Linus Jas</h6>
-                                        <span class="mb-3 d-block">
-                                            The response is delaying sometimes. And why not answering about program and cources offered
-                                            in the university.
-                                        </span>
-                                        <div class="comment-footer">
-                                            <span class="text-muted float-end comment-time">April 1, 2021</span>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                {% endfor %}
+                                
                             </div>
                         </div>
                     </div>
@@ -243,7 +212,7 @@
                 <!-- End Charts -->
                 <!-- ============================================================== -->
             </div>
-
+            
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
@@ -278,8 +247,8 @@
             label: 'User visit count',
             data: {{ visit_trend|safe }},
             fill: true,
-            borderColor: 'rgb(75, 192, 192, 1)',
-            backgroundColor: 'rgb(75, 192, 192, 0.1)',
+            borderColor: 'rgb(13, 110, 253, .6)',
+            backgroundColor: 'rgb(13, 110, 253, 0.1)',
             pointBackgroundColor: 'rgb(0, 0, 0, 0.5)',
             tension: 0.3
         }]
@@ -289,19 +258,23 @@
             type: 'line',
             data,
             options: {
-            responsive: true,
-            radius: 3,
-            hitRadius: 5,
-            hoverRadius: 7,
-            scales: {
-                y: {
-                ticks: {
-                    callback: function(value){
-                    return value;
+                responsive: true,
+                radius: 3,
+                hitRadius: 5,
+                hoverRadius: 7,
+                plugins: {
+                    legend: {
+                        display: false // hide legend label
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 0,
+                        ticks: {
+                            precision: 0
+                        }
                     }
                 }
-                }
-            }
             }
         };
 

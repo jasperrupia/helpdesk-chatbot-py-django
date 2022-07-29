@@ -4,32 +4,49 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
+
                 <li> 
                     <a class="waves-effect waves-light" href="dashboard" aria-expanded="false">
                         <i class="fa fa-tachometer"></i>
-                        <span class="hide-menu"> Dashboard </span>
+                        <span class="hide-menu h6"> Dashboard </span>
                     </a>
                 </li>
+                
                 <li class="sidebar-item">
-                    <a class="waves-effect waves-light" href="feed" aria-expanded="false">
-                        <i class="fa fa-2x">T</i>
-                        <span class="hide-menu"> Train Bot </span>
+                    <a class="sidebar-link has-arrow waves-effect waves-light" href="jasvascript:void(0)" aria-expanded="false">
+                        <i class="fa fa-2x">T</i><span class="hide-menu h6"> Train Bot </span>
                     </a>
-                <li> 
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="feed_data" class="sidebar-link waves-effect waves-light">
+                                <i class="fa  fa-2x">F</i><span class="hide-menu h6"> Feed data </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="feed_docs" class="sidebar-link waves-effect waves-light">
+                                <i class="fa fa-2x">F</i><span class="hide-menu h6"> Feed docs </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- <li> 
                     <a class="waves-effect waves-light" href="test" aria-expanded="false">
                         <i class="fa fa-braille"></i>
-                        <span class="hide-menu"> Test bot </span>
+                        <span class="hide-menu h6"> Test bot </span>
                     </a>
-                </li>
+                </li> -->
+
                 <li> 
                     <a class="waves-effect waves-light" href="feedbacks" aria-expanded="false">
                         <i class="fa fa-commenting"></i>
-                        <span class="hide-menu"> User feedbacks </span>
+                        <span class="hide-menu h6"> User feedbacks </span>
                     </a>
                 </li>
+
                 <li class="sidebar-item">
                     <a class="sidebar-link has-arrow waves-effect waves-light" href="jasvascript:void(0)" aria-expanded="false">
-                        <i class="fa fa-cog"></i><span class="hide-menu"> Setting </span>
+                        <i class="fa fa-cog"></i><span class="hide-menu h6"> Setting </span>
                     </a>
                     <ul aria-expanded="false" class="collapse first-level">
                         <li class="sidebar-item">
@@ -39,11 +56,12 @@
                         </li>
                         <li class="sidebar-item">
                             <a href="theme" class="sidebar-link waves-effect waves-light">
-                                <i class="fa fa-themeisle fa-2x"></i><span class="hide-menu"> Theme </span>
+                                <i class="fa fa-themeisle fa-2x"></i><span class="hide-menu h6"> Theme </span>
                             </a>
                         </li>
                     </ul>
                 </li>
+
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

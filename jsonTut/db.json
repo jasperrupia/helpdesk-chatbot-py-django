@@ -1,0 +1,43 @@
+{
+    "intents": [
+        {
+            "tag": "my-tag1",
+            "patterns": [
+                "hi88",
+                "hi88"
+            ],
+            "responses": [
+                "hello there88",
+                "hello there88"
+            ]
+        },
+        {
+            "tag": "my-tag2",
+            "patterns": [
+                "hi88"
+            ],
+            "responses": [
+                "hello there88"
+            ]
+        },
+        {
+            "tag": "my-tag3",
+            "patterns": [
+                "hi88"
+            ],
+            "responses": [
+                "hello there88"
+            ]
+        },
+        {
+            "tag": "ooooooooo",
+            "patterns": [
+                "ppppppp1"
+            ],
+            "responses": [
+                "hello there88",
+                "hello there88"
+            ]
+        }
+    ]
+}

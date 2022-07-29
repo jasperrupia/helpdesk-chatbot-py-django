@@ -1,5 +1,6 @@
+
 from django.shortcuts import render, redirect
-from .models import User, UserVisit
+from .models import User, UserVisit, Docs, UserFeedback, Tag, Message, Response
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import check_password, make_password
@@ -33,7 +34,7 @@ def user_logout(request):
 @login_required(login_url='')
 def dashboard(request):
     
-    user_visit_count = UserVisit.objects.all().values() 
+    user_visit_count = UserVisit.objects.all().order_by('date_visitad').values() 
     visit_trend = []
     visit_date = []
     for instance in user_visit_count[:7]:
@@ -42,16 +43,31 @@ def dashboard(request):
         else:
             visit_date.append(instance['date_visitad'].strftime("%d/%m/%Y"))
         visit_trend.append(instance['count_users']) 
+    feedback_values = UserFeedback.objects.all().order_by('-date') 
     context = {
         'visit_date': visit_date,
-        'visit_trend': visit_trend
+        'visit_trend': visit_trend,
+        'feedback_values': feedback_values  
     }
     return render(request, 'advanced/index.html', context)
 
 
+
 @login_required(login_url='')
-def feed(request):
-    return render(request, 'advanced/page_feed.html')
+def feed_docs(request):
+    if 'upload_doc' in request.POST:
+        query = Docs(   name = request.POST['doc_name'],
+                        doc = request.FILES['doc_file'],
+                        trainer = request.user
+                        )
+        query.save()
+        messages.success(request, 'The document successful uploaded')
+    doc_values = Docs.objects.all().order_by('-date')
+    context = {
+        'doc_values': doc_values
+    }
+    return render(request, 'advanced/page_feed_docs.html', context)
+
 
 
 @login_required(login_url='')
@@ -59,9 +75,11 @@ def test(request):
     return render(request, 'advanced/page_test_bot.html')
 
 
+
 @login_required(login_url='')
 def profile(request):
     return render(request, 'advanced/page_profile.html')
+
 
 
 @login_required(login_url='')
@@ -106,7 +124,11 @@ def updateProfile(request):
 
 @login_required(login_url='')
 def feedbacks(request):
-    return render(request, 'advanced/page_feedbacks.html')
+    feedback_values = UserFeedback.objects.all().order_by('-date') 
+    context = {
+        'feedback_values': feedback_values 
+    }
+    return render(request, 'advanced/page_feedbacks.html', context)
 
 
 @login_required(login_url='')

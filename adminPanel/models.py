@@ -13,6 +13,32 @@ class UserVisit(models.Model):
 
 
 class UserFeedback(models.Model):
-    name = models.CharField(max_length=30)
+    visitor_name = models.CharField(max_length=30)
     date = models.DateTimeField(auto_now_add=True)
+    message = models.TextField(max_length=500)
+
+
+class Docs(models.Model):
+    name = models.CharField(max_length=30)
+    doc = models.FileField(upload_to='docs')
+    date = models.DateTimeField(auto_now_add=True)
+    trainer = models.ForeignKey(User, db_column='trainer', on_delete=models.DO_NOTHING)
+
+
+class Tag(models.Model):
+    tag = models.CharField(max_length=30)
+    date = models.DateTimeField(auto_now_add=True)
+
+
+class Message(models.Model):
     message = models.TextField(max_length=1000)
+    tag = models.ForeignKey(Tag, db_column='tag', on_delete=models.CASCADE)
+    trainer = models.ForeignKey(User, db_column='trainer', on_delete=models.DO_NOTHING)
+
+
+class Response(models.Model):
+    response = models.TextField(max_length=1000)
+    tag = models.ForeignKey(Tag, db_column='tag', on_delete=models.CASCADE)
+    trainer = models.ForeignKey(User, db_column='trainer', on_delete=models.DO_NOTHING)
+
+    
