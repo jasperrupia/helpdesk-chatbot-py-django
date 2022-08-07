@@ -20,3 +20,9 @@ python manage.py runserver
 
 ```
 
+HTML
+CSS (Bootstrap)
+Javascript (JQuery)
+Python (DJango)
+SQLite
+JSON
