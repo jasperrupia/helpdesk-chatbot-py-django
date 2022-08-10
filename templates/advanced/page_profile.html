@@ -72,7 +72,7 @@
                                     <img src="../media/{{ user.avata }}" width="200px">
                                     <!-- Button trigger modal -->
                                     <a href="javascript:void(0)" class="waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        <i class="mdi mdi-camera mdi-24px"></i>
+                                        <i class="fa fa-camera fa-2x"></i>
                                     </a>
                                     <style>
                                         .row .card .card-body div a{ 
@@ -147,7 +147,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="float-end">
-                                                    <button name="update_info" class="btn btn-success waves-effect waves-light"> <i class="mdi mdi-information-variant mdi-18px"></i> Update Info </button>
+                                                    <button name="update_info" class="btn btn-success waves-effect waves-light"> <i class="fa fa-info"></i> Update Info </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -169,7 +169,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="float-end">
-                                                    <button name="update_pwd" class="btn btn-success waves-effect waves-light"> <i class="mdi mdi-form-textbox-password mdi-18px"></i> Update </button>
+                                                    <button name="update_pwd" class="btn btn-success waves-effect waves-light"> <i class="fa fa-password"></i> Update </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -220,7 +220,7 @@
                                 {% csrf_token %}
                                 <div class="outer-drag-image">
                                     <div class="drag-image">
-                                        <div class="icon"><i class="mdi mdi-cloud-upload mdi-48px"></i></div>
+                                        <div class="icon"><i class="fa fa-cloud fa-4x"></i></div>
                                         <h6> Drag & Drop File Here </h6> 
                                         <span> OR </span> 
                                         <label id="load-image" class="btn btn-primary waves-effect waves-light"> Browse File </label> 
@@ -230,8 +230,8 @@
                             </form>
 
                             <div class="modal-footer">
-                                <button type="submit" form="update-dp" name="reset_dp" class="btn btn-sm waves-effect waves-light btn-secondary" data-bs-dismiss="modal"> <i class="mdi mdi-account-cancel mdi-24px"></i> Resert </button>
-                                <button type="submit" form="update-dp" name="update_dp" class="btn btn-sm waves-effect waves-light btn-success"> <i class="mdi mdi-account-check mdi-24px"></i> Upload </button>
+                                <button type="submit" form="update-dp" name="reset_dp" class="btn btn-sm waves-effect waves-light btn-secondary" data-bs-dismiss="modal"> <i class="fa fa-account-cancel "></i> Resert </button>
+                                <button type="submit" form="update-dp" name="update_dp" class="btn btn-sm waves-effect waves-light btn-success"> <i class="fa fa-account-check "></i> Upload </button>
                             </div>
                         </div>
                     </div>

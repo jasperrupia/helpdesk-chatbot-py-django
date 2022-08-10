@@ -4,3 +4,4 @@ sklearn
 numpy
 mysqlclient
 pillow
+torch

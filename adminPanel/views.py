@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, redirect
 from .models import User, UserVisit, Docs, UserFeedback, Tag, Message, Response
-from django.contrib.auth import authenticate, login, logout
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import messages
@@ -9,31 +9,9 @@ from datetime import date
 
 
 
-def user_login(request):
-    if request.user.is_authenticated:
-        return redirect('dashboard')
-    elif request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password'] 
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('dashboard')
-        else:
-            messages.success(request, ('Username or Password incorrect')) 
-            return redirect('signin')
-    else:
-        return render(request, 'advanced/page_login.html')
-
-def user_logout(request):
-    logout(request)
-    return redirect('signin')
-
-
-
 @login_required(login_url='')
 def dashboard(request):
-    
+
     user_visit_count = UserVisit.objects.all().order_by('date_visitad').values() 
     visit_trend = []
     visit_date = []
@@ -110,16 +88,16 @@ def updateProfile(request):
                 query.password = password 
                 query.save() 
                 #messages.success(request, ('Password updated')) 
-                return redirect('profile') 
+                return redirect('adminPanel:profile') 
             else: 
                 messages.warning(request, ('New Password & Confirm didn\'t match')) 
-                return redirect('profile') 
+                return redirect('adminPanel:profile') 
         else: 
             messages.warning(request, ('Old Password incorrect!')) 
-            return redirect('profile') 
+            return redirect('adminPanel:profile') 
     else:
         return redirect('profile')
-    return redirect('profile')
+    return redirect('adminPanel:profile')
 
 
 @login_required(login_url='')
