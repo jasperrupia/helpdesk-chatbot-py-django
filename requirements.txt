@@ -1,6 +1,6 @@
 Django
 nltk
-sklearn
+scikit-learn
 numpy
 mysqlclient
 pillow

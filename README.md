@@ -5,7 +5,7 @@ python
 pip
 virtualenvwrapper-win
 ```
-
+### How to use it
 ### Commands in windows cmd: 
 ```
 python -m pip install virtualenvwrapper-win
@@ -16,8 +16,19 @@ workon chatbot
 
 pip install -r requirements.txt
 
+python manage.py makemigrations
+
+python manage.py migrate
+
+python manage.py createsuperuser 
+username -> admin
+email -> admin@gmail.com
+password -> admin
+
 python manage.py runserver
 
+url -> http://127.0.0.1:8000
+url -> http://127.0.0.1:8000/advanced
 ```
 ## Tools & Languages
 - Template -> HTML
@@ -31,7 +42,3 @@ python manage.py runserver
 - Training -> nltk, torch
 
 
-## Users for admin panel
-url -> http://127.0.0.1:8000/advanced
-username -> jasper
-password -> jasper

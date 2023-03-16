@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{% static 'helpdesk/style.css' %}">
+    <link rel="stylesheet" href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.css' %}">
+    {% csrf_token %}
+</head>
+<body>
+<div class="container">
+    {% include 'parts/chatbot.html' %}
+</div>
+
+    <script type="text/javascript" src="{% static 'helpdesk/app.js' %}"></script>
+
+</body>
+</html>

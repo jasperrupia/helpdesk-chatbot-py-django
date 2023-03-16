@@ -48,7 +48,7 @@ class Chatbox {
 
         const csrf_token = document.querySelector('[name=csrfmiddlewaretoken]').value;
         //const csrf_token = document.getElementsByName('csrfmiddlewaretoken')[0].value;
-        fetch('http://127.0.0.1:8000/predict', {
+        fetch('/predict', {
             method: 'POST',
             body: JSON.stringify({ message: text1 }),
             headers: {
